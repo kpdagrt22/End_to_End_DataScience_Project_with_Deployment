@@ -1,6 +1,12 @@
 # End-to-End ML Project with MLOps | Modular, Trackable, and Deployable
 
-![AWS](assets/logos/aws.png) ![Airflow](assets/logos/airflow.png) ![DVC](assets/logos/dvc.jpeg) ![MLflow](assets/logos/mlflow.png) ![Docker](assets/logos/docker.png) ![FastAPI](assets/logos/fastapi.png) ![Grafana](assets/logos/grafana.png)
+![AWS](https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg)
+![Airflow](https://upload.wikimedia.org/wikipedia/commons/3/3d/AirflowLogo.svg)
+![DVC](https://avatars.githubusercontent.com/u/41825161?s=200&v=4)
+![MLflow](https://mlflow.org/images/logo.svg)
+![Docker](https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg)
+![FastAPI](https://seeklogo.com/images/F/fastapi-logo-541F7C3F96-seeklogo.com.png)
+![Grafana](https://logowik.com/content/uploads/images/grafana3182.jpg)
 
 ## 🚀 Project Overview
 This project demonstrates a **complete, production-ready data science workflow** implemented using **modular design principles**. It covers every stage of the ML lifecycle — from **data ingestion** to **model evaluation and tracking** — and adheres to **industry best practices** for configuration, pipeline orchestration, and experiment management.
