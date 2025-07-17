@@ -4,11 +4,12 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" height="40"/>
   <img src="https://github.com/apache/airflow/blob/main/airflow-core/docs/img/logos/wordmark_1.svg?raw=true" alt="Airflow" height="40"/>
   <img src="https://avatars.githubusercontent.com/u/41825161?s=200&v=4" alt="DVC" height="40"/>
-  <img src="https://github.com/mlflow/mlflow/blob/master/assets/logo.svg?raw=true" alt="MLflow" height="40"/>
+  <img src="https://mlflow.org/images/logo.svg" alt="MLflow" height="40"/>
   <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker" height="40"/>
-  <img src="https://commons.wikimedia.org/wiki/File:FastAPI_logo.svg#/media/File:FastAPI_logo.svg" alt="FastAPI" height="40"/>
+  <img src="https://raw.githubusercontent.com/tiangolo/fastapi/master/docs/img/logo-margin/logo-teal.png" alt="FastAPI" height="40"/>
   <img src="https://logowik.com/content/uploads/images/grafana3182.jpg" alt="Grafana" height="40"/>
 </p>
+
 
 ## 🚀 Project Overview
 This project demonstrates a **complete, production-ready data science workflow** implemented using **modular design principles**. It covers every stage of the ML lifecycle — from **data ingestion** to **model evaluation and tracking** — and adheres to **industry best practices** for configuration, pipeline orchestration, and experiment management.
