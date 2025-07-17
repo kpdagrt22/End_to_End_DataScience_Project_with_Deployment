@@ -1,120 +1,137 @@
-# 🧠 End-to-End Data Science Project with Modular ML Pipeline
+# End-to-End ML Project with MLOps | Modular, Trackable, and Deployable
 
-This project implements a complete, production-ready machine learning pipeline using best practices in data science engineering. It covers the full lifecycle: from data ingestion to model evaluation, all managed through configuration files and modular code.
+![AWS](assets/logos/aws.png) ![Airflow](assets/logos/airflow.png) ![DVC](assets/logos/dvc.jpeg) ![MLflow](assets/logos/mlflow.png) ![Docker](assets/logos/docker.png) ![FastAPI](assets/logos/fastapi.png) ![Grafana](assets/logos/grafana.png)
 
----
-
-## 🔁 Workflow Overview
-
-```
-Raw Data → Data Ingestion → Data Validation → Data Transformation → Model Training → Model Evaluation
-```
+## 🚀 Project Overview
+This project demonstrates a **complete, production-ready data science workflow** implemented using **modular design principles**. It covers every stage of the ML lifecycle — from **data ingestion** to **model evaluation and tracking** — and adheres to **industry best practices** for configuration, pipeline orchestration, and experiment management.
 
 ---
 
-## 🏗️ Project Architecture
+## 📌 Features
+- **Modular architecture** using Python packages and custom components
+- **Version-controlled datasets and models** via DVC and Git
+- **ML pipeline orchestration** using Apache Airflow & Astronomer
+- **Experiment tracking** with MLflow
+- **Deployment-ready app** using FastAPI
+- **Monitoring with Grafana dashboards**
+- **Config and schema management** with YAML
+- **Automated folder and logging setup**
 
+---
+
+## 🧱 Project Architecture
+```
+project-root/
+│
+├── config/                  # YAML-based config files
+├── constants/              # Hard-coded values and constants
+├── entity/                 # Data classes for type safety
+├── components/             # Core ML pipeline components
+│   ├── data_ingestion.py
+│   ├── data_transformation.py
+│   ├── model_trainer.py
+│   └── model_evaluation.py
+│
+├── pipeline/               # Training and prediction pipelines
+│
+├── utils/                  # Common reusable functions
+│
+├── logs/                   # Central logging location
+├── templates/              # Flask/FastAPI HTML templates (for app)
+├── Dockerfile              # Containerization setup
+├── requirements.txt        # Dependencies
+├── setup.py                # For packaging
+├── main.py                 # Trigger pipeline execution
+└── README.md
+```
+
+---
+
+## ⚙️ Technologies Used
+- **Languages & Libraries**: Python, Scikit-learn, Pandas, Matplotlib, YAML, Joblib
+- **MLOps & Workflow**: MLflow, DVC, Apache Airflow, Astronomer
+- **Deployment**: Docker, FastAPI
+- **Cloud**: AWS EC2, S3
+- **Monitoring**: Grafana
+- **Utilities**: ConfigBox, Ensure Annotation, Logging, GitHub Actions
+
+---
+
+## 🧪 ML Lifecycle
+1. **Data Ingestion**: Reads zipped data from GitHub, unzips & stores in `artifacts`
+2. **Data Validation**: Validates schema using YAML
+3. **Data Transformation**: Cleans and prepares features
+4. **Model Training**: Trains a RandomForest model, logs with MLflow
+5. **Model Evaluation**: Compares metrics, selects best model
+6. **Deployment**: Docker + FastAPI endpoint ready for inference
+7. **Monitoring**: Metrics tracked using MLflow UI and Grafana dashboards
+
+---
+
+## 📁 Configuration Strategy
+All runtime parameters (e.g., file paths, model settings, schema) are defined in:
+- `config.yaml`
+- `params.yaml`
+- `schema.yaml`
+
+These are read using `ConfigBox` for dot-access and type safety.
+
+---
+
+## 🧰 How to Run
 ```bash
-├── config
-│   ├── config.yaml          # Pipeline configurations
-│   ├── params.yaml          # Model hyperparameters
-│   └── schema.yaml          # Data schema for validation
-│
-├── src
-│   ├── config               # Configuration manager
-│   ├── components           # Modular pipeline stages (ingestion, validation, etc.)
-│   ├── pipeline             # Orchestration logic
-│   └── entity               # Data classes and entities
-│
-├── artifacts               # Intermediate files and datasets
-├── main.py                 # Entry point to run the pipeline
-├── requirements.txt        # Project dependencies
-└── README.md               # Project documentation
+# Step 1: Create Conda environment
+conda create -p venv python=3.10 -y
+conda activate ./venv
+
+# Step 2: Install dependencies
+pip install -r requirements.txt
+
+# Step 3: Set up and run project
+python template.py     # auto-generates folder structure
+python main.py         # runs the training pipeline
+
+# Step 4: Track experiment
+mlflow ui              # opens MLflow dashboard
+
+# Optional: Deploy with Docker
+docker build -t mlproject .
+docker run -p 8080:8080 mlproject
 ```
-
----
-
-## 🔧 Key Pipeline Stages
-
-### ✅ Data Ingestion
-- Fetches raw data from local/remote sources.
-- Saves data to the designated artifacts folder.
-
-### ✅ Data Validation
-- Validates dataset structure and schema using `schema.yaml`.
-- Checks for missing values, data types, and expected ranges.
-
-### ✅ Data Transformation
-- Cleans, scales, encodes, and prepares features.
-- Handles outliers, imputation, and feature engineering.
-
-### ✅ Model Training
-- Trains a machine learning model using hyperparameters from `params.yaml`.
-- Saves model artifacts and training logs.
-
-### ✅ Model Evaluation
-- Evaluates the trained model on validation/test sets.
-- Logs metrics using **MLflow** and optionally integrates with **DagsHub**.
-
----
-
-## ⚙️ Configuration Files
-
-- **config.yaml** – Paths and settings for each pipeline stage.
-- **params.yaml** – Hyperparameters for training models.
-- **schema.yaml** – Rules and structure for validating raw data.
-
-All configurations are managed using a centralized configuration manager (`src/config`).
-
----
-
-## 🔍 Experiment Tracking
-
-- **MLflow**: Tracks experiments, metrics, parameters, and artifacts.
-- **Dagshub** *(optional)*: Remote platform for version control and ML experiment tracking.
-
----
-
-## 🚀 Running the Project
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/<your-username>/<repo-name>.git
-   cd <repo-name>
-   ```
-
-2. Create a virtual environment and install dependencies:
-   ```bash
-   conda create -p venv python=3.10 -y
-   conda activate ./venv
-   pip install -r requirements.txt
-   ```
-
-3. Run the main pipeline:
-   ```bash
-   python main.py
-   ```
-
----
-
-## 📈 Future Enhancements
-
-- CI/CD integration for automated training and deployment
-- API serving using FastAPI or Flask
-- Deployment on cloud platforms (AWS, Azure, GCP)
-- Model registry and retraining triggers
 
 ---
 
 ## 👨‍💻 Author
-
-**Your Name**  
-ML Engineer | Data Scientist  
-[LinkedIn]([https://www.linkedin.com/in/your-profile](https://www.linkedin.com/in/prakash-kantumutchu/)) | [GitHub](https://github.com/kpdagrt22)
+**Prakash Kantumutchu**  
+AI/ML Engineer | 7.5+ Yrs Experience  
+[GitHub](https://github.com/kpdagrt22) | [LinkedIn](https://linkedin.com/in/prakash-kantumutchu)  
 
 ---
 
-## 📄 License
+## 📌 Certifications Related to This Project
+- AI Agent Developer — Vanderbilt University
+- Azure AI Engineer Associate (AI-102)
+- Machine Learning Scientist with Python — DataCamp
+- Docker Foundations, GitHub Actions Pro
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+---
+
+## 🌟 Highlights
+- Designed for real-world, production environments
+- Covers both **MLOps** and **modular software engineering**
+- Showcases **YAML-based automation**, **logging**, and **versioning**
+- Ideal template for interviews, demos, and enterprise workflows
+
+> **"Built with the same mindset used in production teams — scalable, testable, and deployable."**
+
+---
+
+
+
+*Coming Soon in repo images folder...*
+
+---
+
+## ⭐ Give a Star
+If this repo helped you understand real-world DS pipelines, consider starring it!
 
